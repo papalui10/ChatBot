@@ -2,6 +2,9 @@ package controller;
 
 import javax.swing.JOptionPane;
 
+import model.ChatBot;
+
+
 public class ChatBotController
 {
 	public void start()
