@@ -1,15 +1,43 @@
 package model;
 
+import java.util.ArrayList;
+
 public class ChatBot
 {
+	private ArrayList<String> spookyList;
+	private ArrayList<String> responseList;
+	
+	private String content;
+	private String joke;
+	private String currentUser;
+	
 	private String userName;
 	private double userAge;
 	
 	
 	public ChatBot()
 	{
+		this.joke = "What did the father tomatoe say the baby tomato?";
+		this.content = new String("lame content");
+		this.currentUser = new String("This is the default user :( not very cash money of you.");
+		
+		this.responseList = new ArrayList<String>();
+		this.spookyList = new ArrayList<String>();
+		
+		buildTheLists();
+	}
+	//helper methods are private
+	private void buildTheLists()
+	{
+		responseList.add("Hello! How are you?");
+		responseList.add("Goodbye - no more talking!");
+		responseList.add("What is youre age?");
+		responseList.add("What is your social security number?");
+		responseList.add("Yeet");
+		
 		
 	}
+	
 	
 	public ChatBot(String userName, String userAge)
 	{
