@@ -18,7 +18,9 @@ public class ChatBotController
 		String userInput = "";
 		while(!userInput.equals("quit"))
 		{
-			userInput = JOptionPane.showInputDialog("What is your name?");
+			userInput = interactWithChatbot(userInput);
+			
+			//userInput = JOptionPane.showInputDialog("What is your name?");
 			if(!userInput.equals("quit"))
 			{
 			user.setUserName(userInput);
@@ -31,11 +33,19 @@ public class ChatBotController
 		}
 	}
 	
-	public String respond(String userInput)
+	public String interactWithChatbot(String text)
+	{
+		String output = "";
+		String userResponse = JOptionPane.showInputDialog("What is your name?");
+		output = user.processText(userResponse);
+		return output;
+	}
+
+	private String respond(String userInput)
 	{
 		if(userInput.equals( user.getUserName() ))
 		{
-			JOptionPane.showMessageDialog(null, "Hello " + user.getUserName());
+			JOptionPane.showMessageDialog(null, user.getUserName());
 		}
 		
 		return null;

@@ -34,8 +34,26 @@ public class ChatBot
 		responseList.add("What is youre age?");
 		responseList.add("What is your social security number?");
 		responseList.add("Yeet");
+		responseList.add("Ay whats poppin b");
+		responseList.add("NAHHHHHHHHHHHHHHHHHHH");
 		
+		spookyList.add("She's here");
+		spookyList.add("Behind you, ...Michael Myers!");
+		spookyList.add("Halloween ...more like LAMEowleen!");
+		spookyList.add("How are your grades?");
+		spookyList.add("...       AHHHHHHHHHH");
+		spookyList.add("Downloading Virus.");
+		spookyList.add("The reason your life is falling apart is because of you and now one elses fault.");
 		
+	}
+	
+	public String processText(String userText)
+	{
+		String answer = "";
+		
+		answer += "You said: " + userText;
+		
+		return answer;
 	}
 	
 	
