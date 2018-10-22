@@ -2,41 +2,25 @@ package chat.controller;
 
 import javax.swing.JOptionPane;
 
-import chat.model.ChatBot;
+import chat.model.Chatbot;
 
 
 public class ChatController
 {
-	private ChatBot user;
+	private Chatbot user;
 	
-	private ChatBot simplebot;
+	private Chatbot simplebot;
 	
 	public ChatController()
 	{
-		simplebot = new ChatBot();
+		simplebot = new Chatbot();
 		
 	}
 	
 	public void start()
 	{
-		String userInput = "";
-		while(!userInput.equals("quit"))
-		{
-			userInput = interactWithChatbot(userInput);
-		}
-	}
-	
-	public String interactWithChatbot(String text)
-	{
-		userInput = JOptionPane.showInputDialog("what is your name?");
-		if(!userInput.equals("quit"))
 		
-		String output = "";
-		String userResponse = JOptionPane.showInputDialog("What is your name?");
-		output = user.processText(userResponse);
-		return output;
 	}
-
 	private String respond(String userInput)
 	{
 		if(userInput.equals( user.getUserName() ))
@@ -48,10 +32,12 @@ public class ChatController
 	}
 		
 
-public ChatBot getChatbot()
+public Chatbot getChatbot()
 {
 	return simplebot;
 	}
-
+public void getContent();
+{
+	
 }
 
