@@ -28,7 +28,7 @@ public class ChabotTest
 	@Test
 	public void testChatbot()
 	{
-		assertNotNull("You need to initialize the content data member", testedBot.getContent() );
+		assertNotNull("You need to initialize the content data member", testedBot.getContent());
 		assertNotNull("ArrayLists need to be initialized too", testedBot.getSpookyList());
 		assertNotNull("ArrayLists need to be initialized too", testedBot.getResponseList());
 		assertNotNull("Current user data member needs to be initialized", testedBot.getCurrentUser());
@@ -75,7 +75,7 @@ public class ChabotTest
 		assertFalse("Null should return false", testedBot.legitimacyChecker(null));
 		assertFalse("Empty string should return false", testedBot.legitimacyChecker(""));
 		assertFalse("Keyboard mash should return false", testedBot.legitimacyChecker("asdfghjkl"));
-		assertTrue("Strings more than 1 letter should return true", testedBot.legitimacyChecker("a"));
+		assertTrue("Strings more than 1 letter should return true", testedBot.legitimacyChecker("aa"));
 	}
 
 	@Test

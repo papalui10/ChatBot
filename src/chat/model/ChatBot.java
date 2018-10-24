@@ -10,7 +10,6 @@ public class Chatbot
 	private String content;
 	private String joke;
 	private String currentUser;
-	public String getContent();
 	
 	private String userName;
 	private double userAge;
@@ -82,5 +81,25 @@ public class Chatbot
 	public void setUserAge(double userAge)
 	{
 		this.userAge = userAge;
+	}
+	
+	public boolean legitimacyChecker(String input)
+	{
+		boolean isValid = true;
+		
+		if(input == null)
+		{
+			isValid = false;
+		}
+		else if(input.length() < 2)
+		{
+			isValid = false;
+		}
+		else if (input.contains("sdf") || input.contains("jkl") || input.contains("cvb"))
+		{
+			isValid = false;
+		}
+			
+		return isValid; 
 	}
 }

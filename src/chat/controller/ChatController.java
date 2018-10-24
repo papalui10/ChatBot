@@ -36,8 +36,9 @@ public Chatbot getChatbot()
 {
 	return simplebot;
 	}
-public void getContent();
-{
-	
 }
+//public void getContent();
+
+	
+
 
