@@ -11,10 +11,6 @@ public class Chatbot
 	private String joke;
 	private String currentUser;
 	
-	private String userName;
-	private double userAge;
-	
-	
 	public Chatbot()
 	{
 		this.joke = "What did the father tomatoe say the baby tomato?";
@@ -44,43 +40,49 @@ public class Chatbot
 		spookyList.add("...       AHHHHHHHHHH");
 		spookyList.add("Downloading Virus.");
 		spookyList.add("The reason your life is falling apart is because of you and now one elses fault.");
+		spookyList.add("Halloween");
 		
 	}
 	
 	public String processText(String userText)
 	{
-		String answer = "";
+		String answer = "You said: " + userText + "\n" + "Chatbot says: ";
 		
-		answer += "You said: " + userText;
+		if(userText == null)
+		{
+			answer = "You said " + userText + "\n" + "Chatbot says: ";
+		}
+		else if(userText.equals(getContent()))
+		{
+			answer = answer + "You said the special words";
+		}
 		
 		return answer;
 	}
 	
-	
-	public Chatbot(String userName, String userAge)
+	public String getContent()
 	{
-		this.userName = "unnamed user";
-		this.userAge = -99;
+		return content;
 	}
 	
-	public String getUserName()
+	public String getjoke()
 	{
-		return userName;
+		return joke;
 	}
 	
-	public double getUserAge()
+	public ArrayList<String> getSpookyList()
 	{
-		return userAge;
+		return spookyList;
 	}
 	
-	public void setUserName(String userName)
+	public ArrayList<String> getResponseList()
 	{
-		this.userName = userName;
+		return responseList;
 	}
 	
-	public void setUserAge(double userAge)
+	public String getCurrentUser()
 	{
-		this.userAge = userAge;
+		return currentUser;
 	}
 	
 	public boolean legitimacyChecker(String input)
@@ -101,5 +103,21 @@ public class Chatbot
 		}
 			
 		return isValid; 
+	}
+	
+	public boolean spookyChecker(String input)
+	{	
+		if(input.contains("Halloween"))
+		{
+			return true;
+		}
+		for(String spookyString:spookyList)
+		{
+			if(input.contains(spookyString))
+			{
+				return true;
+			}
+		}
+		return false;
 	}
 }
