@@ -11,10 +11,15 @@ public class Chatbot
 	private String joke;
 	private String currentUser;
 	
+	public Chatbot(String content)
+	{
+		this.content =(content);
+	}
+	
 	public Chatbot()
 	{
 		this.joke = "What did the father tomatoe say the baby tomato?";
-		this.content = new String("lame content");
+		this.content = new String("some content");
 		this.currentUser = new String("This is the default user :( not very cash money of you.");
 		
 		this.responseList = new ArrayList<String>();
@@ -22,6 +27,7 @@ public class Chatbot
 		
 		buildTheLists();
 	}
+	
 	//helper methods are private
 	private void buildTheLists()
 	{
@@ -32,15 +38,27 @@ public class Chatbot
 		responseList.add("Yeet");
 		responseList.add("Ay whats poppin b");
 		responseList.add("NAHHHHHHHHHHHHHHHHHHH");
+		responseList.add("Josh sucks at chess");
+		responseList.add("Emi is weird");
+		responseList.add("Alex looks good in glasses");
+		responseList.add("Jacob is looking hella socially awkard.");
+		responseList.add("Alex lost to josh in chess, almost 3 times");
+		responseList.add("Josh got a green bar");
+		responseList.add("How is no nut november going?");
+		responseList.add("You're cute!");
+		responseList.add("Cafe rio is a good place");
 		
-		spookyList.add("She's here");
-		spookyList.add("Behind you, ...Michael Myers!");
-		spookyList.add("Halloween ...more like LAMEowleen!");
-		spookyList.add("How are your grades?");
-		spookyList.add("...       AHHHHHHHHHH");
-		spookyList.add("Downloading Virus.");
-		spookyList.add("The reason your life is falling apart is because of you and now one elses fault.");
 		spookyList.add("Halloween");
+		spookyList.add("She's here Halloween");
+		spookyList.add("Behind you, ...Michael Myers! Halloween");
+		spookyList.add("Halloween ...more like LAMEowleen! Halloween");
+		spookyList.add("How are your grades? Halloween");
+		spookyList.add("...       AHHHHHHHHHH Halloween");
+		spookyList.add("Downloading Virus. Halloween");
+		spookyList.add("The reason your life is falling apart is because of you and now one elses fault. Halloween");
+		spookyList.add("OOOHAHHAHHA Halloween");
+		spookyList.add("Crack Cocaine Halloween");
+		spookyList.add("I know your address Halloween");
 		
 	}
 	
@@ -59,7 +77,7 @@ public class Chatbot
 		
 		return answer;
 	}
-	
+
 	public String getContent()
 	{
 		return content;
@@ -119,5 +137,15 @@ public class Chatbot
 			}
 		}
 		return false;
+	}
+	
+	public boolean contentChecker(String contentCheck)
+	{
+		if(contentCheck.contains("text"))
+		{
+			return false;
+		}
+		else
+		    return true;
 	}
 }

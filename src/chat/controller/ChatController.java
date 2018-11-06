@@ -3,38 +3,60 @@ package chat.controller;
 import javax.swing.JOptionPane;
 
 import chat.model.Chatbot;
+import java.util.ArrayList;
 
 
 public class ChatController
 {
-	private Chatbot user;
-	
-	private Chatbot simplebot;
+	private Chatbot bot;
 	
 	public ChatController()
 	{
-		simplebot = new Chatbot();
+		bot = new Chatbot("my chatbot");
 		
 	}
 	
 	public void start()
 	{
+		String userInput = "";
 		
-	}
-	private String respond(String userInput)
-	{
-		if(userInput.equals( user.getUserName() ))
+		while(!userInput.equals("quit"))
 		{
-			JOptionPane.showMessageDialog(null, user.getUserName());
+			userInput = interactWithChatbot(userInput);
 		}
+	}
+
+	public String interactWithChabot(String userInput)
+	{
+		if(userInput == null)
+		{
+			return "you entered null";
+		}
+		else
+		{
+			userInput = JOptionPane.showInputDialog("What is your name?");
+			if(!userInput.equals("quit"))
+			{
+				JOptionPane.showMessageDialog(null, bot.processText(userInput));
+			}
+			else if(userInput.equals("quit"))
+			{
+				JOptionPane.showMessageDialog(null,  "Goodbye ");
+			}
+			
+			return userInput;
+		}
+	}
 		
-		return null;
+	public ArrayList<String> userChatbotCheckers(String word)
+	{
+		return bot.getSpookyList();
 	}
 		
 
 public Chatbot getChatbot()
 {
-	return simplebot;
+	return bot;
 	}
 }
 //public void getContent();
