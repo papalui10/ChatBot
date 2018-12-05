@@ -64,15 +64,22 @@ public class Chatbot
 	
 	public String processText(String userText)
 	{
-		String answer = "You said: " + userText + "\n" + "Chatbot says: ";
+		String answer = "";
 		
-		if(userText == null)
+		if (!legitimacyChecker(userText))
 		{
-			answer = "You said " + userText + "\n" + "Chatbot says: ";
+			answer += "You really should not send null\n";
 		}
-		else if(userText.equals(getContent()))
+		else
 		{
-			answer = answer + "You said the special words";
+			answer += "You said: " + userText + "\n";
+			
+			if (contentChecker(userText))
+			{
+				answer += "You said the special words. \n";
+			}
+			int randomIndex = (int) (responseList.size() * Math.random());
+			answer += "Chatbot says: " + responseList.get(randomIndex) + "\n";
 		}
 		
 		return answer;

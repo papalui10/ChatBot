@@ -11,31 +11,34 @@ import java.util.ArrayList;
 public class ChatController
 {
 	private Chatbot bot;
-	private Chatbot myBot;
-	private Chatbot appFrame;
+	private ChatFrame appFrame;
 	
 	public ChatController()
 	{
 		bot = new Chatbot("my chatbot");
-		
-		//myBot = new Bot();
-		
-		//appController = new appController(this);
+		appFrame = new ChatFrame(this);
 		
 	}
 	
 	public void start()
 	{
+		/*
 		String userInput = "";
 		
 		while(!userInput.equals("quit"))
 		{
 			userInput = interactWithChatbot(userInput);
 		}
+		*/
 	}
 
-	public String interactWithChatbot(String userInput)
+	public String interactWithChatbot(String text)
 	{
+		String output = "";
+		output += bot.processText(text);
+		return output;
+		
+		/*
 		if(userInput == null)
 		{
 			return "you entered null";
@@ -53,7 +56,8 @@ public class ChatController
 			}
 			
 			return userInput;
-		}
+			*/
+		
 	}
 		
 	public ArrayList<String> useChatbotCheckers(String word)
