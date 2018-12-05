@@ -56,7 +56,7 @@ public class ChatController
 		}
 	}
 		
-	public ArrayList<String> userChatbotCheckers(String word)
+	public ArrayList<String> useChatbotCheckers(String word)
 	{
 		return bot.getSpookyList();
 	}
