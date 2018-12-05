@@ -1,6 +1,8 @@
 package chat.controller;
 
 import javax.swing.JOptionPane;
+import chat.model.Chatbot;
+import chat.view.ChatFrame;
 
 import chat.model.Chatbot;
 import java.util.ArrayList;
@@ -9,10 +11,16 @@ import java.util.ArrayList;
 public class ChatController
 {
 	private Chatbot bot;
+	private Chatbot myBot;
+	private Chatbot appFrame;
 	
 	public ChatController()
 	{
 		bot = new Chatbot("my chatbot");
+		
+		//myBot = new Bot();
+		
+		//appController = new appController(this);
 		
 	}
 	
@@ -26,7 +34,7 @@ public class ChatController
 		}
 	}
 
-	public String interactWithChabot(String userInput)
+	public String interactWithChatbot(String userInput)
 	{
 		if(userInput == null)
 		{
