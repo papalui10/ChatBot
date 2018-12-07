@@ -10,8 +10,7 @@ import java.awt.Dimension;
 public class ChatPanel extends JPanel
 {
 	private ChatController appController;
-	private JLabel firstLabel;
-	private JButton firstButton;
+	private JButton resetButton;
 	private SpringLayout appLayout;
 	private JButton chatButton;
 	private JButton checkerButton;
@@ -31,6 +30,7 @@ public class ChatPanel extends JPanel
 		saveButton = new JButton("Save");
 		loadButton = new JButton("Load");
 		chatButton = new JButton("Chat");
+		resetButton = new JButton("Reset");
 		checkerButton = new JButton("Check Text");
 		chatField = new JTextField("Talk to the bot here", 50);
 		chatArea = new JTextArea("Chat Area", 20, 50);
@@ -63,6 +63,7 @@ public class ChatPanel extends JPanel
 		this.add(chatButton);
 		this.add(saveButton);
 		this.add(loadButton);
+		this.add(resetButton);
 		this.add(checkerButton);
 		this.add(chatField);
 	}
@@ -102,6 +103,14 @@ public class ChatPanel extends JPanel
 				chatArea.append(output);
 				chatField.setText("");
 				chatArea.setCaretPosition(chatArea.getDocument().getLength());
+			}
+		});
+		
+		resetButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				chatArea.setText("");
 			}
 		});
 	}
