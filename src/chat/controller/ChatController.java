@@ -64,6 +64,11 @@ public class ChatController
 	{
 		return bot.getSpookyList();
 	}
+	
+	public void handleErrors(Exception error)
+	{
+		JOptionPane.showMessageDialog(appFrame, error.getMessage());
+	}
 		
 
 public Chatbot getChatbot()
