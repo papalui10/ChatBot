@@ -11,12 +11,12 @@ public class Chatbot
 	private String joke;
 	private String currentUser;
 	
-	public Chatbot(String content)
+	public Chatbot()
 	{
-		this.content =(content);
+		this.content = "some content ";
 	}
 	
-	public Chatbot()
+	public Chatbot(String content)
 	{
 		this.joke = "What did the father tomatoe say the baby tomato?";
 		this.content = new String("some content");
@@ -118,13 +118,17 @@ public class Chatbot
 		{
 			isValid = false;
 		}
-		else if(input.length() < 2)
+		else if(input.length() < 1)
 		{
 			isValid = false;
 		}
-		else if (input.contains("sdf") || input.contains("jkl") || input.contains("cvb"))
+		else if (input.contains("asdf") || input.contains("jkl") || input.contains("cvb"))
 		{
 			isValid = false;
+		}
+		else
+		{
+			isValid = true;
 		}
 			
 		return isValid; 

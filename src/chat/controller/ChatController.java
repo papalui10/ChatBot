@@ -71,11 +71,11 @@ public class ChatController
 	}
 		
 
-public Chatbot getChatbot()
-{
-	return bot;
+	public Chatbot getChatbot()
+	{
+		return bot;
+		}
 	}
-}
 //public void getContent();
 
 	
