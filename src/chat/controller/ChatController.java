@@ -7,16 +7,20 @@ import chat.view.ChatFrame;
 import chat.model.Chatbot;
 import java.util.ArrayList;
 
+import chat.model.ChatTwitter;
+
 
 public class ChatController
 {
 	private Chatbot bot;
 	private ChatFrame appFrame;
+	private ChatTwitter myTwitter;
 	
 	public ChatController()
 	{
 		bot = new Chatbot("my chatbot");
 		appFrame = new ChatFrame(this);
+		myTwitter = new ChatTwitter(this);
 		
 	}
 	
@@ -30,7 +34,7 @@ public class ChatController
 			userInput = interactWithChatbot(userInput);
 		}
 		*/
-	}
+	} 
 
 	public String interactWithChatbot(String text)
 	{
@@ -74,8 +78,13 @@ public class ChatController
 	public Chatbot getChatbot()
 	{
 		return bot;
-		}
 	}
+
+	public void tweet(String Text)
+	{
+		myTwitter.sendTweet(text);
+	}
+}
 //public void getContent();
 
 	
