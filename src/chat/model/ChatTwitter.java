@@ -34,7 +34,7 @@ public class ChatTwitter
 	{
 		this.app = app;
 		this.chatTwitter = TwitterFactory.getSingleton();
-		this.tweetEnd = " @CodyHenrichson, @CSCheerLeader, @CTECNow, @ChatbotCTEC";
+		//this.tweetEnd = " @CodyHenrichson, @CSCheerLeader, @CTECNow, @ChatbotCTEC";
 		this.searchedTweets = new ArrayList<Status>();
 		this.tweetedWords = new ArrayList<String>();
 		this.wordsAndCount = new HashMap<String, Integer>();
